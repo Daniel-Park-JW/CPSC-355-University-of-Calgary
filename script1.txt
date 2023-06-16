@@ -1,390 +1,0 @@
-Script started on 2022-09-27 19:51:47-06:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="168" LINES="44"]
-]0;daniel.park1@csa3:~/Documents[?2004hdaniel.park1@csa3:~/Documents$ gdb assign1a.o
-[?2004l[35;1mGNU gdb (GDB) Fedora 12.1-1.fc36[m
-Copyright (C) 2022 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-Type "show copying" and "show warranty" for details.
-This GDB was configured as "aarch64-redhat-linux-gnu".
-Type "show configuration" for configuration details.
-For bug reporting instructions, please see:
-<https://www.gnu.org/software/gdb/bugs/>.
-Find the GDB manual and other documentation resources online at:
-    <http://www.gnu.org/software/gdb/documentation/>.
-
-For help, type "help".
-Type "apropos word" to search for commands related to "word"...
-Reading symbols from [32massign1a.o[m...
-[?2004h
-This GDB supports auto-downloading debuginfo from the following URLs:
-https://debuginfod.fedoraproject.org/ 
-Enable debuginfod for this session? (y or [n]) y
-[?2004lDebuginfod has been enabled.
-To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
-(No debugging symbols found in [32massign1a.o[m)
-[?2004h(gdb) display/! $pc[K[K[K[K[Ki $pc
-[?2004l1: x/i $pc
-[2m<error: [m[2mNo registers.[m[2m>[m
-[?2004h(gdb) m[Kb main
-[?2004lBreakpoint 1 at [34m0x400708[m
-[?2004h(gdb) r
-[?2004lStarting program: [32m/home/ugb/daniel.park1/Documents/assign1a.o[m 
-[Thread debugging using libthread_db enabled]
-Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
-
-Breakpoint 1, [34m0x0000000000400708[m in [33mmain[m ()
-1: x/i $pc
-=> [34m0x400708[m <[33mmain[m+8>:	mov	x19, #0xfffffffffffffff6    	// #-10
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x000000000040070c[m in [33mmain[m ()
-1: x/i $pc
-=> [34m0x40070c[m <[33mmain[m+12>:	mov	x20, #0x0                   	// #0
-[?2004h[?2004l[?2004h(gdb) p $x19
-[?2004l$1 = -10
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400710[m in [33mmain[m ()
-1: x/i $pc
-=> [34m0x400710[m <[33mmain[m+16>:	mov	x21, #0x0                   	// #0
-[?2004h[?2004l[?2004h(gdb) p $x20
-[?2004l$2 = 0
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400714[m in [33mmain[m ()
-1: x/i $pc
-=> [34m0x400714[m <[33mmain[m+20>:	mov	x22, #0xfffffffffffffffc    	// #-4
-[?2004h[?2004l[?2004h(gdb) p $x21
-[?2004l$3 = 0
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400718[m in [33mmain[m ()
-1: x/i $pc
-=> [34m0x400718[m <[33mmain[m+24>:	mov	x23, #0x12d                 	// #301
-[?2004h[?2004l[?2004h(gdb) p $x22
-[?2004l$4 = -4
-[?2004h(gdb) ni
-[?2004l[34m0x000000000040071c[m in [33mmain[m ()
-1: x/i $pc
-=> [34m0x40071c[m <[33mmain[m+28>:	mov	x24, #0x38                  	// #56
-[?2004h[?2004l[?2004h(gdb) p $n[Kx23
-[?2004l$5 = 301
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400720[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400720[m <[33mcalc[m>:	cmn	x19, #0xa
-[?2004h[?2004l[?2004h(gdb) p $x24
-[?2004l$6 = 56
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400724[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400724[m <[33mcalc[m+4>:	b.lt	[34m0x40079c[m <[33mexit[m>  // b.tstop
-[?2004h[?2004l[?2004h(gdb) 
-[?2004l[34m0x0000000000400728[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400728[m <[33mcalc[m+8>:	cmp	x19, #0xa
-[?2004h[?2004l[?2004h(gdb) 
-[?2004l[34m0x000000000040072c[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x40072c[m <[33mcalc[m+12>:	b.gt	[34m0x40079c[m <[33mexit[m>
-[?2004h[?2004l[?2004h(gdb) 
-[?2004l[34m0x0000000000400730[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400730[m <[33mcalc[m+16>:	mov	x25, x19
-[?2004h[?2004l[?2004h(gdb) 
-[?2004l[34m0x0000000000400734[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400734[m <[33mcalc[m+20>:	mov	x26, x19
-[?2004h[?2004l[?2004h(gdb) p #[K$x25
-[?2004l$7 = -10
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400738[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400738[m <[33mcalc[m+24>:	mov	x27, x19
-[?2004h[?2004l[?2004h(gdb) p $x25
-[?2004l$8 = -10
-[?2004h(gdb) p $x26
-[?2004l$9 = -10
-[?2004h(gdb) ni
-[?2004l[34m0x000000000040073c[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x40073c[m <[33mcalc[m+28>:	mul	x25, x25, x22
-[?2004h[?2004l[?2004h(gdb) p $x27
-[?2004l$10 = -10
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400740[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400740[m <[33mcalc[m+32>:	mul	x25, x25, x26
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400744[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400744[m <[33mcalc[m+36>:	mul	x25, x25, x26
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400748[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400748[m <[33mcalc[m+40>:	mul	x25, x25, x26
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x000000000040074c[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x40074c[m <[33mcalc[m+44>:	mul	x26, x26, x26
-[?2004h[?2004l[?2004h(gdb) p $x25
-[?2004l$11 = -40000
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400750[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400750[m <[33mcalc[m+48>:	mul	x26, x26, x23
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400754[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400754[m <[33mcalc[m+52>:	mul	x27, x27, x24
-[?2004h[?2004l[?2004h(gdb) p $x26
-[?2004l$12 = 30100
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400758[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400758[m <[33mcalc[m+56>:	add	x20, x25, x26
-[?2004h[?2004l[?2004h(gdb) p $x27
-[?2004l$13 = -560
-[?2004h(gdb) ni
-[?2004l[34m0x000000000040075c[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x40075c[m <[33mcalc[m+60>:	add	x20, x20, x27
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400760[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400760[m <[33mcalc[m+64>:	sub	x20, x20, #0x67
-[?2004h[?2004l[?2004h(gdb) p $20
-[?2004lHistory has not yet reached $20.
-[?2004h(gdb) p $x20
-[?2004l$14 = -10460
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400764[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400764[m <[33mcalc[m+68>:	cmn	x19, #0xa
-[?2004h[?2004l[?2004h(gdb) 
-[?2004l[34m0x0000000000400768[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400768[m <[33mcalc[m+72>:	b.eq	[34m0x400778[m <[33mchange[m>  // b.none
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400778[m in [33mchange[m ()
-1: x/i $pc
-=> [34m0x400778[m <[33mchange[m>:	mov	x21, x20
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x000000000040077c[m in [33mchange[m ()
-1: x/i $pc
-=> [34m0x40077c[m <[33mchange[m+4>:	b	[34m0x400780[m <[33mprint[m>
-[?2004h[?2004l[?2004h(gdb) p $x21
-[?2004l$15 = -10563
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400780[m in [33mprint[m ()
-1: x/i $pc
-=> [34m0x400780[m <[33mprint[m>:	ldr	x0, [34m0x4007a8[m <[33mexit[m+12>
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400784[m in [33mprint[m ()
-1: x/i $pc
-=> [34m0x400784[m <[33mprint[m+4>:	mov	x1, x19
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400788[m in [33mprint[m ()
-1: x/i $pc
-=> [34m0x400788[m <[33mprint[m+8>:	mov	x2, x20
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x000000000040078c[m in [33mprint[m ()
-1: x/i $pc
-=> [34m0x40078c[m <[33mprint[m+12>:	mov	x3, x21
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400790[m in [33mprint[m ()
-1: x/i $pc
-=> [34m0x400790[m <[33mprint[m+16>:	bl	[34m0x400540[m <[33mprintf@plt[m>
-[?2004h[?2004l[?2004h(gdb) p $x1
-[?2004l$16 = -10
-[?2004h(gdb) p $x2
-[?2004l$17 = -10563
-[?2004h(gdb) p [K $x3
-[?2004l$18 = -10563
-[?2004h(gdb) ni
-[?2004lWith the input x = -10, the corresponding value of y is = -10563, the maximum y value currently is = -10563 
-[34m0x0000000000400794[m in [33mprint[m ()
-1: x/i $pc
-=> [34m0x400794[m <[33mprint[m+20>:	add	x19, x19, #0x1
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400798[m in [33mprint[m ()
-1: x/i $pc
-=> [34m0x400798[m <[33mprint[m+24>:	b	[34m0x400720[m <[33mcalc[m>
-[?2004h[?2004l[?2004h(gdb) p $x19
-[?2004l$19 = -9
-[?2004h(gdb) b cac[Klc
-[?2004lBreakpoint 2 at [34m0x400720[m
-[?2004h(gdb) ni
-[?2004l
-Breakpoint 2, [34m0x0000000000400720[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400720[m <[33mcalc[m>:	cmn	x19, #0xa
-[?2004h[?2004l[?2004h(gdb) p $x19
-[?2004l$20 = -9
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400724[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400724[m <[33mcalc[m+4>:	b.lt	[34m0x40079c[m <[33mexit[m>  // b.tstop
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400728[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400728[m <[33mcalc[m+8>:	cmp	x19, #0xa
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x000000000040072c[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x40072c[m <[33mcalc[m+12>:	b.gt	[34m0x40079c[m <[33mexit[m>
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400730[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400730[m <[33mcalc[m+16>:	mov	x25, x19
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400734[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400734[m <[33mcalc[m+20>:	mov	x26, x19
-[?2004h[?2004l[?2004h(gdb) p $x25
-[?2004l$21 = -9
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400738[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400738[m <[33mcalc[m+24>:	mov	x27, x19
-[?2004h[?2004l[?2004h(gdb) p $x26
-[?2004l$22 = -9
-[?2004h(gdb) ni
-[?2004l[34m0x000000000040073c[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x40073c[m <[33mcalc[m+28>:	mul	x25, x25, x22
-[?2004h[?2004l[?2004h(gdb) p $x27
-[?2004l$23 = -9
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400740[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400740[m <[33mcalc[m+32>:	mul	x25, x25, x26
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400744[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400744[m <[33mcalc[m+36>:	mul	x25, x25, x26
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400748[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400748[m <[33mcalc[m+40>:	mul	x25, x25, x26
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x000000000040074c[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x40074c[m <[33mcalc[m+44>:	mul	x26, x26, x26
-[?2004h[?2004l[?2004h(gdb) p $n[Kx24[K5
-[?2004l$24 = -26244
-[?2004h(gdb) p $x[K[K[K[Kni
-[?2004l[34m0x0000000000400750[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400750[m <[33mcalc[m+48>:	mul	x26, x26, x23
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400754[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400754[m <[33mcalc[m+52>:	mul	x27, x27, x24
-[?2004h[?2004l[?2004h(gdb) p $ [Kx26
-[?2004l$25 = 24381
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400758[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400758[m <[33mcalc[m+56>:	add	x20, x25, x26
-[?2004h[?2004l[?2004h(gdb) p $x27
-[?2004l$26 = -504
-[?2004h(gdb) ni
-[?2004l[34m0x000000000040075c[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x40075c[m <[33mcalc[m+60>:	add	x20, x20, x27
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400760[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400760[m <[33mcalc[m+64>:	sub	x20, x20, #0x67
-[?2004h[?2004l[?2004h(gdb) p $x20
-[?2004l$27 = -2367
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400764[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400764[m <[33mcalc[m+68>:	cmn	x19, #0xa
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400768[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400768[m <[33mcalc[m+72>:	b.eq	[34m0x400778[m <[33mchange[m>  // b.none
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x000000000040076c[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x40076c[m <[33mcalc[m+76>:	cmp	x20, x21
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400770[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400770[m <[33mcalc[m+80>:	b.gt	[34m0x400778[m <[33mchange[m>
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400778[m in [33mchange[m ()
-1: x/i $pc
-=> [34m0x400778[m <[33mchange[m>:	mov	x21, x20
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x000000000040077c[m in [33mchange[m ()
-1: x/i $pc
-=> [34m0x40077c[m <[33mchange[m+4>:	b	[34m0x400780[m <[33mprint[m>
-[?2004h[?2004l[?2004h(gdb) x[Kp $x3[K21
-[?2004l$28 = -2470
-[?2004h(gdb) ni
-[?2004l[34m0x0000000000400780[m in [33mprint[m ()
-1: x/i $pc
-=> [34m0x400780[m <[33mprint[m>:	ldr	x0, [34m0x4007a8[m <[33mexit[m+12>
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400784[m in [33mprint[m ()
-1: x/i $pc
-=> [34m0x400784[m <[33mprint[m+4>:	mov	x1, x19
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400788[m in [33mprint[m ()
-1: x/i $pc
-=> [34m0x400788[m <[33mprint[m+8>:	mov	x2, x20
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x000000000040078c[m in [33mprint[m ()
-1: x/i $pc
-=> [34m0x40078c[m <[33mprint[m+12>:	mov	x3, x21
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400790[m in [33mprint[m ()
-1: x/i $pc
-=> [34m0x400790[m <[33mprint[m+16>:	bl	[34m0x400540[m <[33mprintf@plt[m>
-[?2004h[?2004l[?2004h(gdb) p #x1[K[K[K$x1
-[?2004l$29 = -9
-[?2004h(gdb) p $x2
-[?2004l$30 = -2470
-[?2004h(gdb) p $x3
-[?2004l$31 = -2470
-[?2004h(gdb) h[Kni
-[?2004lWith the input x = -9, the corresponding value of y is = -2470, the maximum y value currently is = -2470 
-[34m0x0000000000400794[m in [33mprint[m ()
-1: x/i $pc
-=> [34m0x400794[m <[33mprint[m+20>:	add	x19, x19, #0x1
-[?2004h[?2004l[?2004h(gdb) ni
-[?2004l[34m0x0000000000400798[m in [33mprint[m ()
-1: x/i $pc
-=> [34m0x400798[m <[33mprint[m+24>:	b	[34m0x400720[m <[33mcalc[m>
-[?2004h[?2004l[?2004h(gdb) p $x19
-[?2004l$32 = -8
-[?2004h(gdb) ni
-[?2004l
-Breakpoint 2, [34m0x0000000000400720[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400720[m <[33mcalc[m>:	cmn	x19, #0xa
-[?2004h[?2004l[?2004h(gdb) e[Kc
-[?2004lContinuing.
-With the input x = -8, the corresponding value of y is = 2329, the maximum y value currently is = 2329 
-
-Breakpoint 2, [34m0x0000000000400720[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400720[m <[33mcalc[m>:	cmn	x19, #0xa
-[?2004h[?2004l[?2004h(gdb) e[Kc
-[?2004lContinuing.
-With the input x = -7, the corresponding value of y is = 4650, the maximum y value currently is = 4650 
-
-Breakpoint 2, [34m0x0000000000400720[m in [33mcalc[m ()
-1: x/i $pc
-=> [34m0x400720[m <[33mcalc[m>:	cmn	x19, #0xa
-[?2004h[?2004l[?2004h(gdb) x[Kei[Kxit
-[?2004l[?2004hA debugging session is active.
-
-	Inferior 1 [process 2336882] will be killed.
-
-Quit anyway? (y or n) y
-[?2004l]0;daniel.park1@csa3:~/Documents[?2004hdaniel.park1@csa3:~/Documents$ exit
-[?2004lexit
-
-Script done on 2022-09-27 20:05:43-06:00 [COMMAND_EXIT_CODE="0"]
